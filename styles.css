@@ -735,3 +735,19 @@ footer .brand-image img { width: 116px; }
     grid-column: 1 !important;
   }
 }
+
+/* Center founder information beneath the portrait */
+.hero-art .photo > div {
+  text-align: center !important;
+}
+
+.hero-art .photo small,
+.hero-art .photo strong {
+  width: 100% !important;
+  text-align: center !important;
+}
+
+.hero-art .photo strong {
+  margin-top: 7px !important;
+  line-height: 1.25 !important;
+}
