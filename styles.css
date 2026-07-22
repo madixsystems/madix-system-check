@@ -704,3 +704,62 @@ footer .brand-image img { width: 116px; }
     text-align: center !important;
   }
 }
+
+/* Premium portrait blending */
+.hero .photo {
+  background: transparent !important;
+  border: 0 !important;
+  box-shadow: none !important;
+  overflow: visible !important;
+}
+
+.hero .photo img {
+  border: 0 !important;
+  box-shadow: none !important;
+
+  /* Softly blend the photograph into the website */
+  -webkit-mask-image: radial-gradient(
+    ellipse 92% 96% at 50% 43%,
+    #000 58%,
+    rgba(0, 0, 0, 0.92) 72%,
+    transparent 100%
+  );
+
+  mask-image: radial-gradient(
+    ellipse 92% 96% at 50% 43%,
+    #000 58%,
+    rgba(0, 0, 0, 0.92) 72%,
+    transparent 100%
+  );
+}
+
+/* Replace the hard polygon with a soft ambient glow */
+.hero-art::before {
+  inset: 12% 4% 4% !important;
+  clip-path: none !important;
+  border-radius: 50% !important;
+  background:
+    radial-gradient(
+      circle at 54% 42%,
+      rgba(181, 116, 136, 0.16),
+      rgba(185, 186, 192, 0.07) 42%,
+      transparent 72%
+    ) !important;
+  filter: blur(28px) !important;
+}
+
+/* Smoother premium glass panels */
+.hero .metric {
+  border: 1px solid rgba(255, 255, 255, 0.42) !important;
+  border-radius: 16px !important;
+  background: linear-gradient(
+    135deg,
+    rgba(250, 250, 252, 0.94),
+    rgba(213, 213, 220, 0.84)
+  ) !important;
+  box-shadow:
+    0 22px 60px rgba(0, 0, 0, 0.24),
+    inset 0 1px 0 rgba(255, 255, 255, 0.8) !important;
+  backdrop-filter: blur(20px) !important;
+  -webkit-backdrop-filter: blur(20px) !important;
+}
